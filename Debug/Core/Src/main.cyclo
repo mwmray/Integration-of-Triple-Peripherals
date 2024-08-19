@@ -1,0 +1,8 @@
+../Core/Src/main.c:83:5:main	3
+../Core/Src/main.c:161:6:SystemClock_Config	4
+../Core/Src/main.c:204:13:MX_ADC1_Init	3
+../Core/Src/main.c:248:13:MX_TIM3_Init	6
+../Core/Src/main.c:303:13:MX_GPIO_Init	1
+../Core/Src/main.c:317:10:Degree_to_PWM	1
+../Core/Src/main.c:323:9:ADC_To_Degree	1
+../Core/Src/main.c:334:6:Error_Handler	1
