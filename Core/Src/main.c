@@ -316,7 +316,7 @@ static void MX_GPIO_Init(void) {
 /* USER CODE BEGIN 4 */
 uint32_t Degree_to_PWM(float phi) {
 
-	return ((float) ((1900 / 180) * phi) + 500);
+	return ((float) (10.555f * phi) + 1449.5f);
 
 }
 

@@ -1044,7 +1044,7 @@ uint32_t Degree_to_PWM(float phi) {
  80008cc:	af00      	add	r7, sp, #0
  80008ce:	6078      	str	r0, [r7, #4]
 
-	return ((float) ((1900 / 180) * phi) + 500);
+	return ((float) (10.555f * phi) + 1449.5f);
  80008d0:	4908      	ldr	r1, [pc, #32]	@ (80008f4 <Degree_to_PWM+0x2c>)
  80008d2:	6878      	ldr	r0, [r7, #4]
  80008d4:	f7ff fc3a 	bl	800014c <__aeabi_fmul>
@@ -1062,8 +1062,8 @@ uint32_t Degree_to_PWM(float phi) {
  80008ee:	3708      	adds	r7, #8
  80008f0:	46bd      	mov	sp, r7
  80008f2:	bd80      	pop	{r7, pc}
- 80008f4:	41200000 	.word	0x41200000
- 80008f8:	43fa0000 	.word	0x43fa0000
+ 80008f4:	4128e148 	.word	0x4128e148
+ 80008f8:	44b53000 	.word	0x44b53000
 
 080008fc <ADC_To_Degree>:
 
