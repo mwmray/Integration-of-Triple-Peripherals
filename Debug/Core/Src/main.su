@@ -1,8 +1,8 @@
 ../Core/Src/main.c:83:5:main	24	static
-../Core/Src/main.c:161:6:SystemClock_Config	88	static
-../Core/Src/main.c:204:13:MX_ADC1_Init	24	static
-../Core/Src/main.c:248:13:MX_TIM3_Init	64	static
-../Core/Src/main.c:303:13:MX_GPIO_Init	24	static
-../Core/Src/main.c:317:10:Degree_to_PWM	16	static
-../Core/Src/main.c:323:9:ADC_To_Degree	16	static
-../Core/Src/main.c:334:6:Error_Handler	4	static,ignoring_inline_asm
+../Core/Src/main.c:158:6:SystemClock_Config	88	static
+../Core/Src/main.c:201:13:MX_ADC1_Init	24	static
+../Core/Src/main.c:245:13:MX_TIM3_Init	64	static
+../Core/Src/main.c:300:13:MX_GPIO_Init	24	static
+../Core/Src/main.c:314:10:Degree_to_PWM	16	static
+../Core/Src/main.c:319:9:ADC_To_Degree	16	static
+../Core/Src/main.c:329:6:Error_Handler	4	static,ignoring_inline_asm

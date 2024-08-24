@@ -124,9 +124,7 @@ int main(void) {
 		HAL_ADC_Start(&hadc1);
 		HAL_ADC_PollForConversion(&hadc1, 100);
 		uint16_t Result = HAL_ADC_GetValue(&hadc1);
-		if (Result>3380){
-			Result=3380;
-		}
+
 		Theta = ADC_To_Degree(Result);
 		Phi = Theta;
 		if (Phi > 180) {
@@ -136,17 +134,16 @@ int main(void) {
 		//Servo Motor
 
 		PWM_Value = Degree_to_PWM(Phi);
-
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, PWM_Value);
 
 		//Update of LCD
 
 		Len = sprintf(degree_str, "Angle = %03d", (int) Phi);
 		Alcd_PutAt_n(&lcd, 0, 0, degree_str, Len);
-		//sprintf(pwm_str, "PWM = %d", PWM_Value);
-		//Alcd_PutAt_n(&lcd, 1, 0, pwm_str, strlen(pwm_str));
-		sprintf(adc_str, "ADC = %04d", Result);
-		Alcd_PutAt_n(&lcd, 1, 0, adc_str, 10);
+		sprintf(pwm_str, "PWM = %d", PWM_Value);
+		Alcd_PutAt_n(&lcd, 1, 0, pwm_str, strlen(pwm_str));
+		//sprintf(adc_str, "ADC = %04d", Result);
+		//Alcd_PutAt_n(&lcd, 1, 0, adc_str, 10);
 		HAL_Delay(500);
 		Alcd_Clear(&lcd);
 	}
@@ -316,14 +313,12 @@ static void MX_GPIO_Init(void) {
 /* USER CODE BEGIN 4 */
 uint32_t Degree_to_PWM(float phi) {
 
-	return ((float) (10.555f * phi) + 1449.5f);
-
+	return ((float) (phi * (1900/180)) + 499);
 }
 
 uint8_t ADC_To_Degree(uint16_t ADC) {
 
-	return ((float) (ADC * (3.0f / 40.0f)));
-
+	return ((float) (ADC * (180.0 / 4095.0f)));
 }
 /* USER CODE END 4 */
 
